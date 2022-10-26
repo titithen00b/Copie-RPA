@@ -1,8 +1,7 @@
 @echo off
 
-:start
+:debut
 if not exist "Y:" ( goto error ) else ( goto copie_01 )
-goto copie_1 
 
 
 :copie_01
@@ -11,7 +10,7 @@ Y:
 cd "04-KO TECHNIQUE"
 for /R %%i in ( *.pdf ) do (
     echo %%i
-    xcopy "%%i" "Y:\01-TODO" /S
+    xcopy "%%i" "Y:\Mathieu" /S
 )
 echo Copie vers "Mathieu" terminee
 timeout 5 /nobreak >nul
@@ -33,5 +32,3 @@ echo Le chemin est \\srv-ad\partage\Secrétaires\EUROCOMBLES Secrétaires\Dossie
 goto eof
 
 :eof
-timeout 90m ping -t 127.0.0.1 > nul
-goto start
